@@ -1,7 +1,6 @@
 var repoContainerEl = document.querySelector("#repos-container")
 var repoSearchTerm = document.querySelector("#repo-search-term")
 
-
 var getUserRepos = function (user) {
     //format the github api url
     var apiUrl = "https://api.github.com/users/" + user + "/repos";
@@ -22,9 +21,6 @@ var getUserRepos = function (user) {
     alert("Unable to connect Github");
   });
 };
-
-// getUserRepos("microsoft");
-// getUserRepos("facebook");
 
 var userFormEl = document.querySelector("#user-form");
 var nameInputEl = document.querySelector("#username");
@@ -49,9 +45,6 @@ var displayRepos = function(repos, searchTerm){
 
   repoContainerEl.textContent = "";
   repoSearchTerm.textContent = searchTerm;
-
-  // console.log(repos)
-  // console.log(searchTerm)
 
   //loops over repos
   for (var i=0;i<repos.length;i++){
@@ -88,8 +81,5 @@ var displayRepos = function(repos, searchTerm){
     repoEl.appendChild(statusEl);
     }
   }
-
-
-
 
 userFormEl.addEventListener("submit", formSubmitHandler);
